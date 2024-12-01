@@ -32,7 +32,7 @@ def calculate_similarity_score(left_list, right_list):
 
 def main():
     # Use 'input.txt' from the same directory
-    file_path = 'input2.txt'
+    file_path = 'input.txt'
     
     # Read the input lists
     left_list, right_list = read_input(file_path)
