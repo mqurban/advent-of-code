@@ -7,7 +7,6 @@ def read_input(file_path):
     try:
         with open(file_path, 'r') as file:
             for line in file:
-                # Split each line into two numbers
                 left, right = map(int, line.strip().split())
                 left_list.append(left)
                 right_list.append(right)
@@ -21,13 +20,11 @@ def read_input(file_path):
     return left_list, right_list
 
 def calculate_total_distance(left_list, right_list):
-    # Sort both lists
     left_sorted = sorted(left_list)
     right_sorted = sorted(right_list)
     
     total_distance = 0
     
-    # Calculate distance between corresponding pairs
     for left, right in zip(left_sorted, right_sorted):
         distance = abs(left - right)
         total_distance += distance
@@ -35,7 +32,6 @@ def calculate_total_distance(left_list, right_list):
     return total_distance
 
 def main():
-    # Read input from file using the full path
     current_dir = os.path.dirname(__file__)
     file_path = os.path.join(current_dir, 'input.txt')
     left_list, right_list = read_input(file_path)
@@ -43,7 +39,6 @@ def main():
     if left_list is None or right_list is None:
         return
     
-    # Calculate and print the result
     result = calculate_total_distance(left_list, right_list)
     print(f"The total distance between the lists is: {result}")
 
